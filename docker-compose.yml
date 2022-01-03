@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+ train:
+  build:
+   context: ./train
+  volumes:
+   - data:/data
+
+ data_prepare:
+  build:
+   context: ./data_prepare
+  volumes:
+   - data:/data
+
+ preprocess:
+  build:
+   context: ./preprocess
+  volumes:
+   - data:/data
+volumes:
+  data:
